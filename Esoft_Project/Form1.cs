@@ -27,5 +27,18 @@ namespace Esoft_Project
         {
 
         }
+
+        private void buttonOpenRealEstates_Click(object sender, EventArgs e)
+        {
+            //задаём новую форму из класса объекты недвижимости и открываем её
+            Form formRealEstate = new FormRealEstate();
+            formRealEstate.Show();
+        }
+
+        private void buttonOpenAgents_Click(object sender, EventArgs e)
+        {
+            Form formAgent = new FormAgent();
+            formAgent.Show();
+        }
     }
 }

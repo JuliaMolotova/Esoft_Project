@@ -10,7 +10,7 @@ namespace Esoft_Project
     static class Program
     {
         ///создание статического экземпляра класса модели ADO.EDM
-        public static Агенство_недвижимостиEntities агенство_Недвижимости= new Агенство_недвижимостиEntities();
+        public static Агенство_недвижимостиEntities6 агенство_Недвижимости= new Агенство_недвижимостиEntities6();
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>

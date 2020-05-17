@@ -187,6 +187,8 @@
             this.columnHeader5,
             this.columnHeader6});
             this.listViewClient.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listViewClient.FullRowSelect = true;
+            this.listViewClient.GridLines = true;
             this.listViewClient.HideSelection = false;
             this.listViewClient.Location = new System.Drawing.Point(152, 26);
             this.listViewClient.Name = "listViewClient";
@@ -245,6 +247,7 @@
             this.Name = "FormClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Клиенты";
+            this.Load += new System.EventHandler(this.FormClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
