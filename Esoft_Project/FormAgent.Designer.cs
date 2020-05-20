@@ -49,38 +49,42 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(568, 468);
+            this.buttonAdd.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonAdd.Location = new System.Drawing.Point(300, 360);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(87, 27);
+            this.buttonAdd.Size = new System.Drawing.Size(110, 35);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Создать";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(682, 468);
+            this.buttonEdit.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonEdit.Location = new System.Drawing.Point(440, 360);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(87, 27);
+            this.buttonEdit.Size = new System.Drawing.Size(110, 35);
             this.buttonEdit.TabIndex = 1;
             this.buttonEdit.Text = "Изменить";
-            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDel
             // 
-            this.buttonDel.Location = new System.Drawing.Point(806, 468);
+            this.buttonDel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDel.Location = new System.Drawing.Point(583, 360);
             this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(87, 27);
+            this.buttonDel.Size = new System.Drawing.Size(110, 35);
             this.buttonDel.TabIndex = 2;
             this.buttonDel.Text = "Удалить";
-            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.UseVisualStyleBackColor = false;
             this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Location = new System.Drawing.Point(40, 53);
+            this.labelFirstName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.labelFirstName.Location = new System.Drawing.Point(12, 36);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(36, 17);
             this.labelFirstName.TabIndex = 3;
@@ -89,7 +93,8 @@
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Location = new System.Drawing.Point(40, 228);
+            this.labelLastName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.labelLastName.Location = new System.Drawing.Point(12, 180);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(68, 17);
             this.labelLastName.TabIndex = 4;
@@ -98,7 +103,8 @@
             // labelMiddleName
             // 
             this.labelMiddleName.AutoSize = true;
-            this.labelMiddleName.Location = new System.Drawing.Point(42, 141);
+            this.labelMiddleName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.labelMiddleName.Location = new System.Drawing.Point(12, 105);
             this.labelMiddleName.Name = "labelMiddleName";
             this.labelMiddleName.Size = new System.Drawing.Size(68, 17);
             this.labelMiddleName.TabIndex = 5;
@@ -107,7 +113,8 @@
             // labelDealShare
             // 
             this.labelDealShare.AutoSize = true;
-            this.labelDealShare.Location = new System.Drawing.Point(31, 367);
+            this.labelDealShare.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.labelDealShare.Location = new System.Drawing.Point(9, 262);
             this.labelDealShare.Name = "labelDealShare";
             this.labelDealShare.Size = new System.Drawing.Size(126, 17);
             this.labelDealShare.TabIndex = 6;
@@ -115,30 +122,30 @@
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(35, 92);
+            this.textBoxFirstName.Location = new System.Drawing.Point(12, 67);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(116, 24);
+            this.textBoxFirstName.Size = new System.Drawing.Size(115, 24);
             this.textBoxFirstName.TabIndex = 7;
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(33, 285);
+            this.textBoxLastName.Location = new System.Drawing.Point(12, 214);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(116, 24);
+            this.textBoxLastName.Size = new System.Drawing.Size(115, 24);
             this.textBoxLastName.TabIndex = 8;
             // 
             // textBoxMiddleName
             // 
-            this.textBoxMiddleName.Location = new System.Drawing.Point(33, 181);
+            this.textBoxMiddleName.Location = new System.Drawing.Point(12, 143);
             this.textBoxMiddleName.Name = "textBoxMiddleName";
-            this.textBoxMiddleName.Size = new System.Drawing.Size(116, 24);
+            this.textBoxMiddleName.Size = new System.Drawing.Size(115, 24);
             this.textBoxMiddleName.TabIndex = 9;
             // 
             // textBoxDealShare
             // 
-            this.textBoxDealShare.Location = new System.Drawing.Point(35, 415);
+            this.textBoxDealShare.Location = new System.Drawing.Point(12, 309);
             this.textBoxDealShare.Name = "textBoxDealShare";
-            this.textBoxDealShare.Size = new System.Drawing.Size(116, 24);
+            this.textBoxDealShare.Size = new System.Drawing.Size(115, 24);
             this.textBoxDealShare.TabIndex = 10;
             // 
             // listViewAgent
@@ -152,9 +159,10 @@
             this.listViewAgent.FullRowSelect = true;
             this.listViewAgent.GridLines = true;
             this.listViewAgent.HideSelection = false;
-            this.listViewAgent.Location = new System.Drawing.Point(247, 75);
+            this.listViewAgent.Location = new System.Drawing.Point(152, 36);
+            this.listViewAgent.MultiSelect = false;
             this.listViewAgent.Name = "listViewAgent";
-            this.listViewAgent.Size = new System.Drawing.Size(620, 340);
+            this.listViewAgent.Size = new System.Drawing.Size(541, 297);
             this.listViewAgent.TabIndex = 11;
             this.listViewAgent.UseCompatibleStateImageBehavior = false;
             this.listViewAgent.View = System.Windows.Forms.View.Details;
@@ -181,13 +189,13 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Доля от комиссии";
-            this.columnHeader5.Width = 109;
+            this.columnHeader5.Width = 126;
             // 
             // FormAgent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 519);
+            this.ClientSize = new System.Drawing.Size(705, 422);
             this.Controls.Add(this.listViewAgent);
             this.Controls.Add(this.textBoxDealShare);
             this.Controls.Add(this.textBoxMiddleName);

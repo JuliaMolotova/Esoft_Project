@@ -54,9 +54,9 @@
             // 
             this.buttonAdd.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonAdd.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAdd.Location = new System.Drawing.Point(317, 397);
+            this.buttonAdd.Location = new System.Drawing.Point(307, 374);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(101, 34);
+            this.buttonAdd.Size = new System.Drawing.Size(110, 35);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Создать";
             this.buttonAdd.UseVisualStyleBackColor = false;
@@ -66,9 +66,9 @@
             // 
             this.buttonEdit.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonEdit.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonEdit.Location = new System.Drawing.Point(443, 397);
+            this.buttonEdit.Location = new System.Drawing.Point(450, 374);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(108, 34);
+            this.buttonEdit.Size = new System.Drawing.Size(110, 35);
             this.buttonEdit.TabIndex = 1;
             this.buttonEdit.Text = "Изменить";
             this.buttonEdit.UseVisualStyleBackColor = false;
@@ -78,9 +78,9 @@
             // 
             this.buttonDel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDel.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDel.Location = new System.Drawing.Point(573, 397);
+            this.buttonDel.Location = new System.Drawing.Point(583, 374);
             this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(99, 34);
+            this.buttonDel.Size = new System.Drawing.Size(110, 35);
             this.buttonDel.TabIndex = 2;
             this.buttonDel.Text = "Удалить";
             this.buttonDel.UseVisualStyleBackColor = false;
@@ -88,37 +88,42 @@
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(12, 63);
+            this.textBoxFirstName.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxFirstName.Location = new System.Drawing.Point(12, 49);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(113, 20);
+            this.textBoxFirstName.Size = new System.Drawing.Size(115, 24);
             this.textBoxFirstName.TabIndex = 3;
             // 
             // textBoxMiddleName
             // 
-            this.textBoxMiddleName.Location = new System.Drawing.Point(12, 131);
+            this.textBoxMiddleName.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxMiddleName.Location = new System.Drawing.Point(12, 123);
             this.textBoxMiddleName.Name = "textBoxMiddleName";
-            this.textBoxMiddleName.Size = new System.Drawing.Size(113, 20);
+            this.textBoxMiddleName.Size = new System.Drawing.Size(115, 24);
             this.textBoxMiddleName.TabIndex = 4;
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(12, 203);
+            this.textBoxLastName.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLastName.Location = new System.Drawing.Point(12, 196);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(113, 20);
+            this.textBoxLastName.Size = new System.Drawing.Size(115, 24);
             this.textBoxLastName.TabIndex = 5;
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(12, 277);
+            this.textBoxPhone.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPhone.Location = new System.Drawing.Point(12, 271);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(113, 20);
+            this.textBoxPhone.Size = new System.Drawing.Size(115, 24);
             this.textBoxPhone.TabIndex = 6;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(12, 353);
+            this.textBoxEmail.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEmail.Location = new System.Drawing.Point(12, 338);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(113, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(115, 24);
             this.textBoxEmail.TabIndex = 7;
             // 
             // labelFirstName
@@ -126,7 +131,7 @@
             this.labelFirstName.AutoSize = true;
             this.labelFirstName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.labelFirstName.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelFirstName.Location = new System.Drawing.Point(9, 26);
+            this.labelFirstName.Location = new System.Drawing.Point(12, 21);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(36, 17);
             this.labelFirstName.TabIndex = 8;
@@ -137,7 +142,7 @@
             this.labelMiddleName.AutoSize = true;
             this.labelMiddleName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.labelMiddleName.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelMiddleName.Location = new System.Drawing.Point(9, 99);
+            this.labelMiddleName.Location = new System.Drawing.Point(12, 94);
             this.labelMiddleName.Name = "labelMiddleName";
             this.labelMiddleName.Size = new System.Drawing.Size(68, 17);
             this.labelMiddleName.TabIndex = 9;
@@ -148,7 +153,7 @@
             this.labelLastName.AutoSize = true;
             this.labelLastName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.labelLastName.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelLastName.Location = new System.Drawing.Point(12, 167);
+            this.labelLastName.Location = new System.Drawing.Point(12, 164);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(68, 17);
             this.labelLastName.TabIndex = 10;
@@ -159,7 +164,7 @@
             this.labelPhone.AutoSize = true;
             this.labelPhone.BackColor = System.Drawing.SystemColors.ControlLight;
             this.labelPhone.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPhone.Location = new System.Drawing.Point(9, 245);
+            this.labelPhone.Location = new System.Drawing.Point(12, 240);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(63, 17);
             this.labelPhone.TabIndex = 11;
@@ -170,7 +175,7 @@
             this.labelEmail.AutoSize = true;
             this.labelEmail.BackColor = System.Drawing.SystemColors.ControlLight;
             this.labelEmail.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelEmail.Location = new System.Drawing.Point(9, 317);
+            this.labelEmail.Location = new System.Drawing.Point(12, 308);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(48, 17);
             this.labelEmail.TabIndex = 12;
@@ -178,7 +183,7 @@
             // 
             // listViewClient
             // 
-            this.listViewClient.BackColor = System.Drawing.SystemColors.Menu;
+            this.listViewClient.BackColor = System.Drawing.SystemColors.Window;
             this.listViewClient.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -190,9 +195,10 @@
             this.listViewClient.FullRowSelect = true;
             this.listViewClient.GridLines = true;
             this.listViewClient.HideSelection = false;
-            this.listViewClient.Location = new System.Drawing.Point(152, 26);
+            this.listViewClient.Location = new System.Drawing.Point(152, 49);
+            this.listViewClient.MultiSelect = false;
             this.listViewClient.Name = "listViewClient";
-            this.listViewClient.Size = new System.Drawing.Size(520, 347);
+            this.listViewClient.Size = new System.Drawing.Size(541, 297);
             this.listViewClient.TabIndex = 13;
             this.listViewClient.UseCompatibleStateImageBehavior = false;
             this.listViewClient.View = System.Windows.Forms.View.Details;
@@ -229,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.ClientSize = new System.Drawing.Size(705, 422);
             this.Controls.Add(this.listViewClient);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelPhone);
@@ -244,6 +250,7 @@
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonAdd);
+            this.Font = new System.Drawing.Font("Roboto Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "FormClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Клиенты";

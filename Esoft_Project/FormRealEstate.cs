@@ -17,31 +17,23 @@ namespace Esoft_Project
             InitializeComponent();
             comboBoxType.SelectedIndex = 0;
             ShowRealEstateSet();
-            comboBoxType.SelectedIndex = 1;
-            ShowRealEstateSet();
-            comboBoxType.SelectedIndex = 2;
-            ShowRealEstateSet();
         }
 
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Изменения формы, если выборана строчка "Квартира" (ее индекс 0)
             if (comboBoxType.SelectedIndex == 0)
             {
-                //Делаем видимыми нужные элементы
                 listViewRealEstateSet_Apartment.Visible = true;
                 labelFloor.Visible = true;
                 textBoxFloor.Visible = true;
                 labelRooms.Visible = true;
                 textBoxRooms.Visible = true;
 
-                //Скрываем ненужные элементы
                 listViewRealEstateSet_House.Visible = false;
                 listViewRealEstateSet_Land.Visible = false;
                 labelTotalFloors.Visible = false;
                 textBoxTotalFloors.Visible = false;
 
-                //Очищаем все видимые элементы
                 textBoxAddress_City.Text = "";
                 textBoxAddress_House.Text = "";
                 textBoxAddress_Street.Text = "";
@@ -53,15 +45,12 @@ namespace Esoft_Project
                 textBoxFloor.Text = "";
             }
 
-            //Изменения формы, если выборана строчка "Дом" (ее индекс 1)
             else if (comboBoxType.SelectedIndex == 1)
             {
-                //Делаем видимыми нужные элементы
                 listViewRealEstateSet_House.Visible = true;
                 labelTotalFloors.Visible = true;
                 textBoxTotalFloors.Visible = true;
 
-                //Скрываем ненужные элементы
                 listViewRealEstateSet_Land.Visible = false;
                 listViewRealEstateSet_Apartment.Visible = false;
                 labelFloor.Visible = false;
@@ -69,7 +58,6 @@ namespace Esoft_Project
                 labelRooms.Visible = false;
                 textBoxRooms.Visible = false;
 
-                //Очищаем все видимые элементы
                 textBoxAddress_City.Text = "";
                 textBoxAddress_House.Text = "";
                 textBoxAddress_Street.Text = "";
@@ -80,13 +68,10 @@ namespace Esoft_Project
                 textBoxTotalFloors.Text = "";
             }
 
-            //Изменения формы, если выборана строчка "Земля" (ее индекс 2)
             else if (comboBoxType.SelectedIndex == 2)
             {
-                //Делаем видимыми нужные элементы
                 listViewRealEstateSet_Land.Visible = true;
 
-                //Скрываем ненужные элементы
                 listViewRealEstateSet_House.Visible = false;
                 listViewRealEstateSet_Apartment.Visible = false;
                 labelFloor.Visible = false;
@@ -96,7 +81,6 @@ namespace Esoft_Project
                 labelTotalFloors.Visible = false;
                 textBoxTotalFloors.Visible = false;
 
-                //Очищаем все видимые элементы
                 textBoxAddress_City.Text = "";
                 textBoxAddress_House.Text = "";
                 textBoxAddress_Street.Text = "";
@@ -109,9 +93,7 @@ namespace Esoft_Project
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            //Создаем новый экземпляр класса Объект недвижимости
             RealEstateSet realEstate = new RealEstateSet();
-            //Делаем ссылку на объект, который хранитcя в textBox-ax (сначала общие поля)
             realEstate.Address_City = textBoxAddress_City.Text;
             realEstate.Address_House = textBoxAddress_House.Text;
             realEstate.Address_Street = textBoxAddress_Street.Text;
@@ -119,90 +101,70 @@ namespace Esoft_Project
             realEstate.Coordinate_latitude = Convert.ToDouble(textBoxCoordinate_latitude.Text);
             realEstate.Coordinate_longitude = Convert.ToDouble(textBoxCoordinate_longitude.Text);
             realEstate.TotalArea = Convert.ToDouble(textBoxTotalArea.Text);
-            //Дополнительные поля для типа "Квартира"
+
             if (comboBoxType.SelectedIndex == 0)
             {
                 realEstate.Type = 0;
                 realEstate.Rooms = Convert.ToInt32(textBoxRooms.Text);
                 realEstate.Floor = Convert.ToInt32(textBoxFloor.Text);
             }
-            //Дополнительные поля для типа "Дом"
             else if (comboBoxType.SelectedIndex == 1)
             {
                 realEstate.Type = 1;
                 realEstate.TotalFloors = Convert.ToInt32(textBoxTotalFloors.Text);
             }
-            //Дополнительные поля для типа "Земля"
             else
             {
                 realEstate.Type = 2;
             }
-            //Добавляем в таблицу RealEstateSet новый объект недвижимости realEstate
             Program.агенство_Недвижимости.RealEstateSet.Add(realEstate);
-            //Сохраняем изменения в модели
             Program.агенство_Недвижимости.SaveChanges();
             ShowRealEstateSet();
         }
+
         void ShowRealEstateSet()
         {
-            //Предварительно очищаем все listView
             listViewRealEstateSet_Apartment.Items.Clear();
             listViewRealEstateSet_House.Items.Clear();
             listViewRealEstateSet_Land.Items.Clear();
-            //Проходим по коллекции клиентов, которые находятся в базе с foreach
             foreach (RealEstateSet realEstate in Program.агенство_Недвижимости.RealEstateSet)
             {
-                //отображение квартир в listViewRealEstateSet_Apartment
                 if (realEstate.Type == 0)
                 {
-                    //создадим новый элемент в listViewRealEstateSet_Apartment с помощью массива строк
                     ListViewItem item = new ListViewItem(new string[]
                     {
-                    //указываем необходимые поля
                     realEstate.Address_City, realEstate.Address_Street, realEstate.Address_House,
                     realEstate.Address_Number, realEstate.Coordinate_latitude.ToString(),
                     realEstate.Coordinate_longitude.ToString(), realEstate.TotalArea.ToString(),
                     realEstate.Rooms.ToString(), realEstate.Floor.ToString()
                     });
-                    //указываем по какому тегу выбраны элементы
                     item.Tag = realEstate;
-                    //добавляем элементы в listViewRealEstateSet Apartment для отображения
                     listViewRealEstateSet_Apartment.Items.Add(item);
                 }
-                //отображение домов в listViewRealEstateSet_House
                 else if (realEstate.Type == 1)
                 {
-                    //создадим новый элемент в listViewRealEstateSet House с помощью массива строк
                     ListViewItem item = new ListViewItem(new string[]
                         {
-                          //указываем необходимые поля
                           realEstate.Address_City, realEstate.Address_Street, realEstate.Address_House,
                           realEstate.Address_Number, realEstate.Coordinate_latitude.ToString(),
                           realEstate.Coordinate_longitude. ToString(), realEstate.TotalArea.ToString(),
                           realEstate.TotalFloors.ToString()
                         });
-                    //указываем по какому тегу выбраны элементы
                     item.Tag = realEstate;
-                    //добавляем элементы в listViewRealEstateSet_House для отображения
                     listViewRealEstateSet_House.Items.Add(item);
                 }
                 else
                 {
-                    //создадим новый элемент в listViewRealestateSet_Land с помощью массива строк
                     ListViewItem item = new ListViewItem(new string[]
                         {
-                          //указываем необходимые поля
                           realEstate.Address_City, realEstate.Address_Street, realEstate.Address_House,
                           realEstate.Address_Number, realEstate.Coordinate_latitude.ToString(),
                           realEstate.Coordinate_longitude.ToString(), realEstate.TotalArea.ToString()
                         });
-                    //указываем по какому тегу выбраны элементы
                     item.Tag = realEstate;
-                    //добавляем элементы в listViewRealEstateSet_Land для отображения
                     listViewRealEstateSet_Land.Items.Add(item);
                 }
             }
-            //выравниваем столбцы во всех listView
             listViewRealEstateSet_Apartment.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             listViewRealEstateSet_House.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             listViewRealEstateSet_Land.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -210,12 +172,9 @@ namespace Esoft_Project
 
         private void listViewRealEstateSet_Apartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //если выбран один элемент
             if (listViewRealEstateSet_Apartment.SelectedItems.Count == 1)
             {
-                //ищем элемент из таблицы по тегу
                 RealEstateSet realEstate = listViewRealEstateSet_Apartment.SelectedItems[0].Tag as RealEstateSet;
-                //указываем, что может быть изменено
                 textBoxAddress_City.Text = realEstate.Address_City;
                 textBoxAddress_Street.Text = realEstate.Address_Street;
                 textBoxAddress_House.Text = realEstate.Address_House;
@@ -228,7 +187,6 @@ namespace Esoft_Project
             }
             else
             {
-                //если не выбран ни один элемент, задаем пустые поля
                 textBoxAddress_City.Text = "";
                 textBoxAddress_House.Text = "";
                 textBoxAddress_Street.Text = "";
@@ -243,12 +201,9 @@ namespace Esoft_Project
 
         private void listViewRealEstateSet_House_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //если выбран один элемент
             if (listViewRealEstateSet_Land.SelectedItems.Count == 1)
             {
-                //ищем элемент из таблицы по тегу
                 RealEstateSet realEstate = listViewRealEstateSet_House.SelectedItems[0].Tag as RealEstateSet;
-                //указываем, что может быть изменено
                 textBoxAddress_City.Text = realEstate.Address_City;
                 textBoxAddress_Street.Text = realEstate.Address_Street;
                 textBoxAddress_House.Text = realEstate.Address_House;
@@ -259,8 +214,7 @@ namespace Esoft_Project
                 textBoxTotalFloors.Text = realEstate.TotalFloors.ToString();
             }
             else
-            {
-                //если не выбран ни один элемент, задаем пустые поля
+            { 
                 textBoxAddress_City.Text = "";
                 textBoxAddress_House.Text = "";
                 textBoxAddress_Street.Text = "";
@@ -275,12 +229,9 @@ namespace Esoft_Project
 
         private void listViewRealEstateSet_Land_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //если выбран один элемент
-            if (listViewRealEstateSet_House.SelectedItems.Count == 1)
+            if (listViewRealEstateSet_Land.SelectedItems.Count == 1)
             {
-                //ищем элемент из таблицы по тегу
-                RealEstateSet realEstate = listViewRealEstateSet_House.SelectedItems[0].Tag as RealEstateSet;
-                //указываем, что может быть изменено
+                RealEstateSet realEstate = listViewRealEstateSet_Land.SelectedItems[0].Tag as RealEstateSet;
                 textBoxAddress_City.Text = realEstate.Address_City;
                 textBoxAddress_Street.Text = realEstate.Address_Street;
                 textBoxAddress_House.Text = realEstate.Address_House;
@@ -291,7 +242,6 @@ namespace Esoft_Project
             }
             else
             {
-                //если не выбран ни один элемент, задаем пустые поля
                 textBoxAddress_City.Text = "";
                 textBoxAddress_House.Text = "";
                 textBoxAddress_Street.Text = "";
@@ -304,15 +254,11 @@ namespace Esoft_Project
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            //выбран тип "Квартира", работа с listViewRealEstateSet_Apartment
             if (comboBoxType.SelectedIndex == 0)
             {
-                //если в listView выбран элемент
                 if (listViewRealEstateSet_Apartment.SelectedItems.Count == 1)
                 {
-                    //Ищем элемент из таблицы по тегу
                     RealEstateSet realEstate = listViewRealEstateSet_Apartment.SelectedItems[0].Tag as RealEstateSet;
-                    //указываем, что может быть изменено
                     realEstate.Address_City = textBoxAddress_City.Text;
                     realEstate.Address_House = textBoxAddress_House.Text;
                     realEstate.Address_Street = textBoxAddress_Street.Text;
@@ -322,80 +268,59 @@ namespace Esoft_Project
                     realEstate.TotalArea = Convert.ToDouble(textBoxTotalArea.Text);
                     realEstate.Rooms = Convert.ToInt32(textBoxRooms.Text);
                     realEstate.Floor = Convert.ToInt32(textBoxFloor.Text);
-                    //сохраняем изменения в модели
                     Program.агенство_Недвижимости.SaveChanges();
-                    //отображаем в listViewRealEstateSet_Apartment
                     ShowRealEstateSet();
                 }
             }
-            //выбран тип "Дом", работа с listViewRealEstateSet_House
             else if (comboBoxType.SelectedIndex == 1)
             {
-                //если в listView выбран элемент
                 if (listViewRealEstateSet_House.SelectedItems.Count == 1)
                 {
-                    //Ищем элемент из таблицы по тегу
                     RealEstateSet realEstate = listViewRealEstateSet_House.SelectedItems[0].Tag as RealEstateSet;
-                    //указываем, что может быть изменено
                     realEstate.Address_City = textBoxAddress_City.Text;
                     realEstate.Address_House = textBoxAddress_House.Text;
                     realEstate.Address_Street = textBoxAddress_Street.Text;
                     realEstate.Address_Number = textBoxAddress_Number.Text;
-                    realEstate.Coordinate_latitude = Convert.ToDouble(textBoxCoordinate_latitude.Text);
-                    realEstate.Coordinate_longitude = Convert.ToDouble(textBoxCoordinate_longitude.Text);
-                    realEstate.TotalArea = Convert.ToDouble(textBoxTotalArea.Text);
+                    realEstate.Coordinate_latitude = Convert.ToInt32(textBoxCoordinate_latitude.Text);
+                    realEstate.Coordinate_longitude = Convert.ToInt32(textBoxCoordinate_longitude.Text);
+                    realEstate.TotalArea = Convert.ToInt32(textBoxTotalArea.Text);
                     realEstate.TotalFloors = Convert.ToInt32(textBoxTotalFloors.Text);
-                    //сохраняем изменения в модели
                     Program.агенство_Недвижимости.SaveChanges();
-                    //отображаем в listViewRealEstateSet_House
                     ShowRealEstateSet();
                 }
             }
-            // выбран тип "Земля", работа с listViewRealEstateSet_Land
-            else if (comboBoxType.SelectedIndex == 2)
+            else
             {
-                //если в listView выбран элемент
                 if (listViewRealEstateSet_Land.SelectedItems.Count == 1)
                 {
-                    //Ищем элемент из таблицы по тегу
                     RealEstateSet realEstate = listViewRealEstateSet_Land.SelectedItems[0].Tag as RealEstateSet;
-                    //указываем, что может быть изменено
                     realEstate.Address_City = textBoxAddress_City.Text;
                     realEstate.Address_House = textBoxAddress_House.Text;
                     realEstate.Address_Street = textBoxAddress_Street.Text;
                     realEstate.Address_Number = textBoxAddress_Number.Text;
-                    realEstate.Coordinate_latitude = Convert.ToDouble(textBoxCoordinate_latitude.Text);
-                    realEstate.Coordinate_longitude = Convert.ToDouble(textBoxCoordinate_longitude.Text);
-                    realEstate.TotalArea = Convert.ToDouble(textBoxTotalArea.Text);
-                    //сохраняем изменения в модели
+                    realEstate.Coordinate_latitude = Convert.ToInt32(textBoxCoordinate_latitude.Text);
+                    realEstate.Coordinate_longitude = Convert.ToInt32(textBoxCoordinate_longitude.Text);
+                    realEstate.TotalArea = Convert.ToInt32(textBoxTotalArea.Text);
                     Program.агенство_Недвижимости.SaveChanges();
-                    //отображаем в listViewRealEstateSet_House
                     ShowRealEstateSet();
                 }
 
             }
         }
+
         private void buttonDel_Click(object sender, EventArgs e)
         {
-            //пробуем совершить действие
             try
             {
-                //выбран тип "Квартира", работа с listViewRea1EstateSet_Apartment
                 if (comboBoxType.SelectedIndex == 0)
                 {
-                    //если в выбран элемент
                     if (listViewRealEstateSet_Apartment.SelectedItems.Count == 1)
                     {
-                        //Ищем этот элемент базе по тегу
                         RealEstateSet realEstate = listViewRealEstateSet_Apartment.SelectedItems[0].Tag as RealEstateSet;
-                        //удаляем из модели базы данных
                         Program.агенство_Недвижимости.RealEstateSet.Remove(realEstate);
-                        //сохраняем изменения
                         Program.агенство_Недвижимости.SaveChanges();
-                        // отображаем обновленный список
                         ShowRealEstateSet();
                     }
-                    //очищаем текстовые поля
                     textBoxAddress_City.Text = "";
                     textBoxAddress_House.Text = "";
                     textBoxAddress_Street.Text = "";
@@ -408,19 +333,13 @@ namespace Esoft_Project
                 }
                 else if (comboBoxType.SelectedIndex == 1)
                 {
-                    //если в listView выбран элемент 
                     if (listViewRealEstateSet_House.SelectedItems.Count == 1)
                     {
-                        //ищем этот элемент базе по тегу
                         RealEstateSet realEstate = listViewRealEstateSet_House.SelectedItems[0].Tag as RealEstateSet;
-                        //удаляем из модели базы данных
                         Program.агенство_Недвижимости.RealEstateSet.Remove(realEstate);
-                        //сохраняем изменения
                         Program.агенство_Недвижимости.SaveChanges();
-                        //отображаем обновленный список
                         ShowRealEstateSet();
                     }
-                    //очищаем текстовые поля
                     textBoxAddress_City.Text = "";
                     textBoxAddress_House.Text = "";
                     textBoxAddress_Street.Text = "";
@@ -430,22 +349,15 @@ namespace Esoft_Project
                     textBoxTotalArea.Text = "";
                     textBoxTotalFloors.Text = "";
                 }
-                //выбран тип "Земля", работа с listViewRealestateset_Land
                 else
                 {
-                    //если в выбран элемент
                     if (listViewRealEstateSet_Land.SelectedItems.Count == 1)
                     {
-                        // ищем этот элемент в базе по тегу
                         RealEstateSet realEstate = listViewRealEstateSet_Land.SelectedItems[0].Tag as RealEstateSet;
-                        // удаляем из модели базы данных
                         Program.агенство_Недвижимости.RealEstateSet.Remove(realEstate);
-                        //сохраняем изменения
                         Program.агенство_Недвижимости.SaveChanges();
-                        //отображаем обновленный список
                         ShowRealEstateSet();
                     }
-                    //очищаем текстовые поля
                     textBoxAddress_City.Text = "";
                     textBoxAddress_House.Text = "";
                     textBoxAddress_Street.Text = "";
@@ -453,10 +365,8 @@ namespace Esoft_Project
                     textBoxCoordinate_latitude.Text = "";
                     textBoxCoordinate_longitude.Text = "";
                     textBoxTotalArea.Text = "";
-                    ShowRealEstateSet();
                 }
             }
-            //если возникает какая-то ошибка
             catch
             {
                 MessageBox.Show("Невозможно удалить, эта запись используется", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -539,6 +449,11 @@ namespace Esoft_Project
             {
                 e.Handled = true;
             }
+        }
+
+        private void textBoxTotalFloors_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
